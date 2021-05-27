@@ -1,0 +1,168 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    
+    }
+   
+ul{
+    padding: 0px !important;
+    }         
+.menu-principal{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    height:55px;
+    }     
+main{
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    }
+.logo{
+    float: left;
+    margin-left: 170px;
+    padding: 3px;
+    width: 50%;
+     }
+.rede-social ul li{
+    margin-left:2px;
+    display:inline;
+    float: left;
+    list-style: none;
+    }       
+.rede-social{
+    width: 10%;
+    float: right;
+    padding: 10px;
+     }
+    
+.header-2{
+    width: 980px;
+    margin: 0 auto;
+    padding: 17px;
+     }
+.menu-urls{
+    height: 50px;
+    border-bottom: 1px solid rgb(177, 153, 153);
+     }
+
+.menu ul li{
+    display: inline-block;
+    color: rgb(56, 55, 55);
+    margin-left: 10px;
+    height: 40px;
+     }
+.menu ul li :hover{
+   
+    border-bottom: 3px solid rgb(140, 171, 218); 
+    }
+
+.menu ul li a:hover{
+    color:  rgb(140, 171, 218); 
+    padding: 15px;  
+    
+     }  
+
+.menu ul li a{
+     color: rgb(0, 0, 0);
+     text-decoration: none;
+     font-size: 12px;
+     text-transform: uppercase;
+    }
+.menu{
+    width: 60%;
+    float: left;
+    }
+.busca{
+    text-align: center;
+    width: 40%;
+    float: right;     
+    }
+.busca input{
+    background-image: url('https://i.imgur.com/1Thxkmb.png');
+    background-repeat: no-repeat;
+    background-position: 99%;
+    height: 30px;
+    padding: 3px;
+    width: 190px;
+    margin-top: -7px;
+    border: 1px solid rgb(94, 94, 94);
+    border-radius: 5px;
+     }     
+               
+.slider{
+    width: 550px;
+    height: 300px; 
+    left:380px;
+    padding: 8px;
+    position: absolute;
+    -webkit-overflow-scrolling:touch;
+
+}
+button.slick-prev{
+    font-size: 0px;
+    border: none;
+    width:14px;
+    height: 45px;
+    z-index: 9;
+    background-color: transparent;
+    position: absolute;
+    background-image: url('https://i.imgur.com/GqlTwIG.png');
+    top: 130px;
+    left: 30px;
+
+     }
+button.slick-next{
+    font-size: 0px;
+    border: none;
+    width:14px;
+    height: 45px;
+    z-index: 9;
+    background-color: transparent;
+    position: absolute;
+    background-image: url('https://i.imgur.com/QwCA6P7.png');
+    top: 130px;
+    right:30px;     
+     }
+.slick-list{
+    width: 100% important;
+     }    
+.slick-initialized{
+    overflow: hidden;
+     }    
+.slick-dots li button{
+    font-size: 0px;
+    border: 3px solid rgb(255, 255, 255);
+    width: 15px;
+    height: 15px;         
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+
+    } 
+.slick-dots{
+    margin: 0 auto;
+    width: 50%;
+    position: absolute;
+    left: 45%;
+    top: 220px;    
+     }
+
+li.slick-active button{
+    background: rgb(117, 117, 117) ;
+     }
+.slick-dots li{
+    display: inline-block;
+    padding-left: 10px;
+     }
+      
+.local{
+    padding: 25px;
+   
+
+}
