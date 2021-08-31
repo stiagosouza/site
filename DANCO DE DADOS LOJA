@@ -1,0 +1,89 @@
+CREATE TABLE Cliente (
+    Id_client INT(3) auto_increment PRIMARY KEY,
+	Nome_Cliente VARCHAR(100),
+	CPF VARCHAR(12) UNIQUE,
+	Endereco VARCHAR(50),
+    Nome_Produto VARCHAR(50),
+    dataNasc DATE,
+    contato INT(14)
+);
+insert into Cliente ('Id_client','Nome_Cliente','CPF','Endereco','Nome_Produto','dataNasc','contato')
+values('', 'Maria','1234566789','rua das umarizeira,1435','1990-05-23','99999999999'),
+('', 'Josoé','95145675332','rua das umarizeira,1535','1990-03-20','55599999999'),
+('', 'Caio','15947891236','rua das umarizeira,1635','1990-09-15','5555254625'),
+   
+CREATE TABLE Produtos (
+    Id_produto INT(3) auto_increment PRIMARY KEY,
+    Nome VARCHAR(50),
+    Fornecedor VARCHAR(60),
+    estoque INT(3),
+    Data_Venda TIMESTAMP,
+    TipoProduto VARCHAR(50),
+    qtdEstoque INT(3),
+    Id_fornecedor INT(3) auto_increment,
+    codProduto INT(3)
+   );
+insert into  Produtos ('Id_produto','Nome','Fornecedor','estoque','Data_Venda','TipoProduto','qtdEstoque','Id_fornecedor','codProduto')
+values('', 'João','casa eletro','223','2021-08-29','eletrodomestico','122','','25'),
+('', 'Maria','casa eletro','254','2021-08-31','eletrodomestico','152','','25')
+
+CREATE TABLE Usuario (
+    Id_usuario INT(3) auto_increment PRIMARY KEY,
+    nome_Uusario VARCHAR(100),
+    produto VARCHAR(50),
+    qtd_venda INT(3),
+    CPF VARCHAR(12) UNIQUE,
+    CargoUsuario VARCHAR(30),
+    Login VARCHAR(11) UNIQUE
+);
+insert into Usuario  ('Id_usuario','nome_Uusario','produto','qtd_venda','CPF','CargoUsuario','Login')
+values('', 'João','ventilador','2','321654987','vendedor','joaoeocara1123'),
+values('', 'João','ventilador','5','123789456','vendedor','joaoeocara1233'),
+values('', 'João','ventilador','8','456123789','vendedor','joaoeocara1223')
+
+CREATE TABLE Fornecedor (
+    Id_Produto INT(3) auto_increment PRIMARY KEY,
+    Nome_produto VARCHAR(50),
+    quantidade INT(3),
+    Nome_Empresa VARCHAR(60) UNIQUE,
+    Email VARCHAR(30),
+    telefone INT(12)UNIQUE, 
+    EnderecoFornecedor VARCHAR(70)
+);
+insert into Fornecedor ('Id_Produto','Nome_produto','quantidade','Nome_Empresa','Email','telefone','EnderecoFornecedor')
+values('','João','tv 60pol','100','aqui é tv','aquietv@ig.com','555689456','trv sao joa 582,centro'),
+('','João','microodas','100','eletrotudo','eletrotudo@ig.com','555682556','trv sao joa 382,centro'),
+('','João','sofa','100','só conforto','soconforto@ig.com','555259456','trv sao joa 58,centro')
+
+CREATE TABLE Vendas (
+    Id_vendas INT(3) auto_increment PRIMARY KEY,
+    Data_venda TIMESTAMP,
+    Fornecedor VARCHAR(70),
+    Nome_vendedor VARCHAR(100),
+    Nome_Produto VARCHAR(50),
+    Nome_Cilente VARCHAR(100),
+    Quantidade INT(3)
+);
+ insert into Vendas ('Id_vendas','Data_venda','Fornecedor',' Nome_vendedor','Nome_Produto','Nome_Cilente','Quantidade')
+values('', '2021-07-25','só conforto','João','sofa','Maria','4'),
+('', '2021-07-25','só conforto','João','sofa','Jsoé','2'),
+('', '2021-07-25','só conforto','João','sofa','Maria','1')
+ALTER TABLE Cliente ADD CONSTRAINT FK_Cliente_2
+    FOREIGN KEY (Client_id)
+    REFERENCES Cliente (Id_vendas);
+ 
+ALTER TABLE Produtos ADD CONSTRAINT FK_Produtos_2
+    FOREIGN KEY (Fornecedor_id)
+    REFERENCES Vendas (Id_vendas);
+ 
+ALTER TABLE Usuario ADD CONSTRAINT FK_Usuario_2
+    FOREIGN KEY (usuario_id)
+    REFERENCES vendas (Id_vendas);
+ 
+ALTER TABLE Fornecedor ADD CONSTRAINT FK_Fornecedor_2
+    FOREIGN KEY (fornecedor_id)
+    REFERENCES produtos (Id_produto);
+ 
+ALTER TABLE Vendas ADD CONSTRAINT FK_Vendas_2
+    FOREIGN KEY (vendas_id)
+    REFERENCES usuario (id_usuario);
